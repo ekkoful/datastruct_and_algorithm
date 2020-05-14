@@ -179,7 +179,7 @@ func main() {
 	fmt.Println(list.GetSize())
 	fmt.Println(list.GetItems())
 	list.Insert(1, 10)
-	//list.Insert(0, 11)
+	list.Insert(0, 11)
 	list.RemoveByIndex(4)
 	fmt.Println(list.GetSize())
 	fmt.Println(list.GetItems())
