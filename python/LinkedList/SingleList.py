@@ -74,7 +74,8 @@ class SingleList(object):
         elif index < 0 or index > self.get_len():
             return False
         elif index == 0:
-            self.__head == current.next.next
+            current = self.__head
+            self.__head = current.next
         else:
             current = self.__head
             count = 1
@@ -134,7 +135,7 @@ if __name__ == '__main__':
     print(singlelist.get_items())
     print(singlelist.search_by_value(2))
     print(singlelist.search_by_index(2))
-    singlelist.delete_byindex(2)
+    singlelist.delete_byindex(0)
     print(singlelist.get_len())
     print(singlelist.get_items())
 
