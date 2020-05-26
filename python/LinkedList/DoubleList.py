@@ -66,7 +66,39 @@ class DoubleList():
             node.prev = current
             current.next = node
 
-    
+    def search_by_value(self, value):
+        if self.is_empty():
+            return False
+        else:
+            current = self.__head
+            while current.next:
+                if current.next.data == value:
+                    return value
+                current = current.next
+        return False
+
+    def search_by_index(self, index):
+        if self.is_empty():
+            return False
+        if index < 0 or index > self.get_len():
+            return False
+        elif index == 0:
+            return self.__head
+        else:
+            count = 1
+            current = self.__head
+            while count < index:
+                current = current.next
+                count += 1
+            return current.next.data
+
+    def delete_by_index(self, index):
+        pass
+
+    def delete_by_value(self, value):
+        pass
+
+
             
 
 

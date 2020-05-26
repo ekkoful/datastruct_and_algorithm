@@ -97,7 +97,18 @@ class SingleList(object):
     def search_by_index(self, index):
         if self.is_empty():
             return False
-        
+        if index < 0 or index > self.get_len():
+            return False
+        elif index == 0:
+            return self.__head.data
+        else:
+            count = 1
+            current = self.__head
+            while count < index:
+                current = current.next
+                count += 1
+            return current.next.data
+
     def get_items(self):
         if self.is_empty():
             return False
@@ -121,6 +132,8 @@ if __name__ == '__main__':
     singlelist.insert(2, 10)
     print(singlelist.get_len())
     print(singlelist.get_items())
+    print(singlelist.search_by_value(2))
+    print(singlelist.search_by_index(2))
     singlelist.delete_byindex(2)
     print(singlelist.get_len())
     print(singlelist.get_items())
